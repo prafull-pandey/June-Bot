@@ -1,0 +1,11 @@
+Python
+Flask
+pyjwt
+
+got to : cd D:\Projects\JuneProject\june_oss\
+activate env: .\Scripts\activate
+$env:FLASK_APP = "$pwd\app\http\api\endpoints.py"
+
+ python -m flask run
+
+9326440877
