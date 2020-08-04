@@ -16,6 +16,10 @@ def ask_june():
     return json_response("Thisismessage")
 
 
+@app.route("/trainModel", methods=["POST"])
+def train_model():
+    
+
 #common functions here
 def json_response(payload, status=200):
     return (json.dumps(payload), status, {'Content-type': 'application/json'})

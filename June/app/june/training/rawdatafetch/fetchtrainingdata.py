@@ -4,7 +4,7 @@ Created on Mon Aug  3 20:33:01 2020
 
 @author: PRAFULL
 """
-import data_fetch.Abstract_Data_Fetch_Factory as fetch_factory
+from .data_fetch import Abstract_Data_Fetch_Factory as fetch_factory
 
 def fetch_training_data():
     source='JSON'
