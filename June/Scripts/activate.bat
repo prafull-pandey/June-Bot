@@ -1,7 +1,36 @@
-@echo off
-
-set "VIRTUAL_ENV=D:\Projects\JuneProject\June"
-
+@echo off
+if not "%VIRTUAL_ENV%" == "" (
+
+	goto gotHome
+
+) else (
+
+	cd ..
+
+)
+
+set "VIRTUAL_ENV=%cd%"
+
+cd "%CURRENT_DIR%"
+
+:gotHome
+
+if exist "%VIRTUAL_ENV%\Scripts\activate.bat" (
+
+	goto okHome
+
+) else (
+
+	goto end
+
+)
+
+:okHome
+
+echo %VIRTUAL_ENV%
+
+
+set "CURRENT_DIR=%cd%"echo %CURRENT_DIR%
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
 ) else (
@@ -11,7 +40,7 @@ if defined _OLD_VIRTUAL_PROMPT (
     if not defined VIRTUAL_ENV_DISABLE_PROMPT (
         set "_OLD_VIRTUAL_PROMPT=%PROMPT%"
     )
-)
+)
 if not defined VIRTUAL_ENV_DISABLE_PROMPT (
     set "ENV_PROMPT="
     if NOT DEFINED ENV_PROMPT (
@@ -38,3 +67,5 @@ if defined _OLD_VIRTUAL_PATH goto ENDIFVPATH2
 :ENDIFVPATH2
 
 set "PATH=%VIRTUAL_ENV%\Scripts;%PATH%"
+set "PATH=%VIRTUAL_ENV%;%PATH%"
+:end

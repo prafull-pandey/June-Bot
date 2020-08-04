@@ -22,7 +22,11 @@ def initialize_training_data():
     classes=read_pickle_file(classes_pickle_file_path)
     documents=read_pickle_file(documents_pickle_file_path)
     
-    
+    print (len(documents), "documents")
+    # classes = intents
+    print (len(classes), "classes", classes)
+    # words = all words, vocabulary
+    print (len(words), "unique lemmatized words", words)
     # create an empty array for our output
     output_empty = [0] * len(classes)
     # training set, bag of words for each sentence
@@ -56,7 +60,7 @@ def read_pickle_file(file_path):
     with (open(file_path, "rb")) as openfile:
         while True:
             try:
-                objects.append(pickle.load(openfile))
+                objects=pickle.load(openfile)
             except EOFError:
                 break
     return objects
