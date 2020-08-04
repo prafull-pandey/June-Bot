@@ -1,4 +1,5 @@
 @echo off
+
 if not "%VIRTUAL_ENV%" == "" (
 
 	goto gotHome
@@ -10,6 +11,8 @@ if not "%VIRTUAL_ENV%" == "" (
 )
 
 set "VIRTUAL_ENV=%cd%"
+
+set "FLASK_APP=%cd%/app/http/api/endpoints.py"
 
 cd "%CURRENT_DIR%"
 
@@ -29,6 +32,7 @@ if exist "%VIRTUAL_ENV%\Scripts\activate.bat" (
 
 echo %VIRTUAL_ENV%
 
+echo %FLASK_APP%
 
 set "CURRENT_DIR=%cd%"echo %CURRENT_DIR%
 if defined _OLD_VIRTUAL_PROMPT (

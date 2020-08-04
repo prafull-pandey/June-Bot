@@ -3,6 +3,7 @@ print(sys.path)
 from .middlewares import login_required
 from flask import Flask, json, g, request
 from flask_cors import CORS
+from app.june.starttraining import start_training
 
 app=Flask(__name__)
 CORS(app)
@@ -18,7 +19,8 @@ def ask_june():
 
 @app.route("/trainModel", methods=["POST"])
 def train_model():
-    
+    start_training('start')
+    return json_response("trained Successfully")
 
 #common functions here
 def json_response(payload, status=200):

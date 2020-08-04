@@ -14,3 +14,5 @@ import sys,os
 
 sys.path.append(os.path.join("D:/Projects/June-Bot", "June"))
 sys.path
+
+install modules using python -m pip install tensorflow
