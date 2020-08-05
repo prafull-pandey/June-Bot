@@ -4,6 +4,7 @@ from .middlewares import login_required
 from flask import Flask, json, g, request
 from flask_cors import CORS
 from app.june.starttraining import start_training
+from app.june.responsecontroller import get_response_from_prediction
 
 app=Flask(__name__)
 CORS(app)
@@ -13,8 +14,8 @@ CORS(app)
 def ask_june():
     
     #method to ask goes here
-    
-    return json_response("Thisismessage")
+    que=request.args.get('ask')
+    return json_response(get_response_from_prediction(que))
 
 
 @app.route("/trainModel", methods=["POST"])
