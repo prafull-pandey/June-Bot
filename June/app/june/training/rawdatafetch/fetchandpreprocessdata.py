@@ -4,7 +4,7 @@ Created on Mon Aug  3 20:44:15 2020
 
 @author: PRAFULL
 """
-from fetchtrainingdata import fetch_training_data
+from .fetchtrainingdata import fetch_training_data
 from configuration.june_configuration import June_Configuration
 import nltk
 import pickle
@@ -19,6 +19,7 @@ def preprocess_data():
     ignore_words=['?', '!']
     word_pickle_file_path=June_Configuration.get_words_pickle_file_path()
     classes_pickle_file_path=June_Configuration.get_classes_pickle_file_path()
+    documents_pickle_file_path=June_Configuration.get_documents_pickle_file_path()
     intents=fetch_training_data()
     for intent in intents['intents']:
         for pattern in intent['patterns']:
@@ -43,3 +44,4 @@ def preprocess_data():
     print (len(words), "unique lemmatized words", words)
     pickle.dump(words,open(word_pickle_file_path,'wb'))
     pickle.dump(classes,open(classes_pickle_file_path,'wb'))
+    pickle.dump(documents,open(documents_pickle_file_path,'wb'))

@@ -8,4 +8,10 @@ $env:FLASK_APP = "$pwd\app\http\api\endpoints.py"
 
  python -m flask run
 
-9326440877
+
+import sys,os
+
+sys.path.append(os.path.join("D:/Projects/June-Bot", "June"))
+sys.path
+
+install modules using python -m pip install tensorflow

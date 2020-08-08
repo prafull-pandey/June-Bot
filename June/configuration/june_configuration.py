@@ -50,6 +50,16 @@ class June_Configuration:
     def get_classes_pickle_file_path():
         training_config=June_Configuration.load_training_config()
         return training_config['filePaths']['pickleclassesPath']
+    
+    @staticmethod
+    def get_documents_pickle_file_path():
+        training_config=June_Configuration.load_training_config()
+        return training_config['filePaths']['pickledocumentsPath']
+
+    @staticmethod
+    def get_training_model_file_path():
+        training_config=June_Configuration.load_training_config()
+        return training_config['filePaths']['trainedmodelpath']
 
 
     
