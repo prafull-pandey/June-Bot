@@ -32,11 +32,10 @@ deactivate -nondestructive
 
 $VIRTUAL_ENV = $BASE_DIR
 $env:VIRTUAL_ENV = $VIRTUAL_ENV
-$env:FLASK_APP = "$VIRTUAL_ENV/app/http/api/endpoints.py"
 
 New-Variable -Scope global -Name _OLD_VIRTUAL_PATH -Value $env:PATH
 
-$env:PATH = "$env:VIRTUAL_ENV/Scripts;" + "$env:VIRTUAL_ENV;" + $env:PATH
+$env:PATH = "$env:VIRTUAL_ENV/Scripts;" + $env:PATH
 if (!$env:VIRTUAL_ENV_DISABLE_PROMPT) {
     function global:_old_virtual_prompt {
         ""
