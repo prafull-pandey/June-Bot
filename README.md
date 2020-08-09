@@ -1,10 +1,67 @@
 # June-Bot
 A Chat bot Application based on python, react and Java Microservice
+Python 3.7.5
 
 #Installation
-Python based project June is based on virtual environment
- Git clone the repo
+make sure you have instaled virtualenv from pip
+```bash
+python -m pip install --upgrade virtualenv
+```
+Create a folder and setup virtual env inside that
+```bash
+python -m virtualenv .
+```
+ Git clone the repo inside folder
+ 
  go to June/Scripts folder
+ 
+ edit activate.bat file and add the following lines at starting
+ 
+ ```bat
+ @echo off
+
+if not "%VIRTUAL_ENV%" == "" (
+
+	goto gotHome
+
+) else (
+
+	cd ..
+
+)
+
+set "VIRTUAL_ENV=%cd%"
+
+set "FLASK_APP=%cd%/June-Bot/June/app/http/api/endpoints.py"
+
+cd "%CURRENT_DIR%"
+
+:gotHome
+
+if exist "%VIRTUAL_ENV%\Scripts\activate.bat" (
+
+	goto okHome
+
+) else (
+
+	goto end
+
+)
+
+:okHome
+
+ ```
+ 
+ and these lines at end
+ ```bat
+ set "PATH=%VIRTUAL_ENV%\Scripts;%PATH%"
+
+set "PATH=%VIRTUAL_ENV%\June-Bot\June;%PATH%"
+set "PYTHONPATH=%VIRTUAL_ENV%\June-Bot\June;%PYTHONPATH%"
+ ```
+ 
+ Code for linux and powershell will be written soon
+ 
  
  start virtual environment based on your favorite terminal
  
@@ -20,6 +77,16 @@ Python based project June is based on virtual environment
  ```bash
  ./activate
  ```
+ 
+ Now we need to install the dependencies as used by project 
+ The dependency file exists at June/requirements.txt
+ to install these dependencies
+  activate virtual env as above method
+  
+  ```dos
+  pip install -r June-Bot\June\requirements.txt
+  ```
+ 
  virtual environment will be setup
  (Since this is flask based application June\app\http\api\endpoints.py is api file
  the same path is used as FLASK_APP path, This is already set)
