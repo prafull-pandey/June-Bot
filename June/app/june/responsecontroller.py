@@ -12,6 +12,7 @@ def get_response_from_prediction(sentence):
     
     
     #fetch possible intents list
+    print(sentence)
     valid_intents=start_predicting(sentence)
     
     response=get_response_from_intents(valid_intents)

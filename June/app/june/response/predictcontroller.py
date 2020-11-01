@@ -16,12 +16,18 @@ def start_predicting(sentence):
     
     words, classes=load_words_and_classes()
     model=load_model_file()
-    
+    print('Inside Algo')
+    print('Input sentence: '+sentence)
     #clean and tokenize the sentence
     sentence_words=clean_up_sentence(sentence)
+    print('Tokenized sentence: ')
+    print(sentence_words)
     
     #get bag of words
     bow=get_bag_of_words(sentence_words, words)
+
+    print('Bag of Words: ')
+    print(bow)
     
     #predict the class from model
     possible_intent_list=predict_model_class(model, bow, classes)
