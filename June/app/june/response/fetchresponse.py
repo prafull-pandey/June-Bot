@@ -9,7 +9,8 @@ import random
 from app.june.training.rawdatafetch.fetchtrainingdata import fetch_training_data
 
 def get_response_from_intents(valid_intents):
-    
+    print('valid intents:  ')
+    print(valid_intents)
     intents=fetch_training_data()
     tag = valid_intents[0]['intent']
     list_of_intents = intents['intents']
