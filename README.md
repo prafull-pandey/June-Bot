@@ -91,6 +91,19 @@ set "PYTHONPATH=%VIRTUAL_ENV%\June-Bot\June;%PYTHONPATH%"
  (Since this is flask based application June\app\http\api\endpoints.py is api file
  the same path is used as FLASK_APP path, This is already set)
  
+ go to June-Bot\June\configuration\june_training_configuration.ini 
+ and edit the paths as your local systems
+ 
+ Another Important thing is NLTK resources
+ 
+ ```dos
+ python
+ import nltk
+ nltk.download()
+ ```
+ Download all
+ 
+ 
  after activating virtual environment run the following command
  ```bash
  python -m flask run
